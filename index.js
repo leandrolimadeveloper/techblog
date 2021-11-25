@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const connection = require('./database/database')
 
+const categoriesController = require('./categories/CategoriesController')
+const articleController = require('./articles/ArticlesController')
+
 // View Engine
 app.set('view engine', 'ejs')
 
@@ -25,7 +28,7 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.get('')
+app.use('/', categoriesController)
 
 app.listen(8080, () => {
     console.log('O servidor está rodando.')
