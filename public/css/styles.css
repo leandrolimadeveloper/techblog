@@ -1,0 +1,14 @@
+nav {
+    background-color: rgb(32, 32, 32)
+}
+
+.navbar-brand p {
+    color: white;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
