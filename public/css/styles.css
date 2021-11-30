@@ -12,3 +12,8 @@ nav {
 body {
     font-family: 'Courier New', Courier, monospace;
 }
+
+a.nav-link {
+    background-color: white;
+    color: black;
+}
