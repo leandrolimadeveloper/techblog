@@ -32,6 +32,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/', categoriesController)
+app.use('/', articleController)
 
 app.listen(8080, () => {
     console.log('O servidor está rodando.')
