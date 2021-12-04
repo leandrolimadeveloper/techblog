@@ -11,7 +11,7 @@
 
         <% categories.forEach(category => { %>
             <li class="nav-item d-inline-block border border-1 border-info ml-2"> <!-- -->
-                <a class="nav-link text-white" href="/"><%= category.title %></a>
+                <a class="nav-link text-white" href="/category/<%= category.slug %>"><%= category.title %></a>
             </li>
         <% }) %>
 
