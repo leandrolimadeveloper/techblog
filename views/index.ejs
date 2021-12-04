@@ -2,7 +2,7 @@
 <%- include ('./partials/homenavbar.ejs') %>
 
 <body>
-    <div class="container float-left ml-5">
+    <div class="container">
         <br>
         <div class="jumbotron">
             <h1 class="display-4">TechBlog</h1>
@@ -20,7 +20,7 @@
                     <h2><%= article.title %></h2>
                 </div>
                 <div class="card-body">
-                    <a href="" class="btn btn-success">Ler artigo</a>
+                    <a href="/<%= article.slug %>" class="btn btn-success">Ler artigo</a>
                 </div>
             </div>
             <br>
