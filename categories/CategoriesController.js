@@ -23,7 +23,7 @@ router.post('/categories/save', (req, res) => {
     } else {
         res.redirect('/admin/categories/new')
     }    
-})
+})  
 
 router.get('/admin/categories', (req, res) => {
     Category.findAll().then(categories => {
@@ -35,7 +35,6 @@ router.post('/categories/delete', (req, res) => {
     let id = req.body.id
     if(id != undefined) {
         if(!isNaN(id)) {
-
             Category.destroy({
                 where: {
                     id: id
