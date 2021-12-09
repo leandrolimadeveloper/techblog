@@ -60,10 +60,12 @@ router.get('/admin/articles/edit/:id', (req, res) => {
     if(isNaN(id)) {
         res.redirect('/admin/articles')
     }
-    
+
     Article.findByPk(id).then(article => {
         if(article != undefined) {
-            res.render('admin/articles/edit', {article: article, body: body})
+            Category.findAll().then(categories => {
+                res.render('admin/articles/edit', {article: article, body: body, categories: categories})
+            })
         } else {
             res.redirect('/admin/articles')
         }

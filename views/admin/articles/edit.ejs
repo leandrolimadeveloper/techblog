@@ -10,8 +10,19 @@
             <form action="/articles/update" method="POST">
                 <input class="form-control" type="text" name="title" placeholder="Defina o título a ser editado" value="<%= article.title %>"><br>
                 <textarea class="form-control" rows="30" placeholder="Escreva seu artigo aqui..." name="body" id="article"><%= article.body %></textarea>
-
                 <input type="hidden" name="id" value="<%= article.id %>">
+
+                <label>Categoria</label>
+                <select name="category" class="form-control">
+                    <% categories.forEach((category) => { %>
+                        <% if(category.id == article.categoryId) { %>
+                            <option value="<%= category.id %>" selected><%= category.title %></option> 
+                        <% } else { %>
+                            <option value="<%= category.id %>"><%= category.title %></option> 
+                        <% } %>
+                    <% }) %>
+                </select>
+
 
                 <button class="btn btn-success mt-3">Finalizar edição</button>
                 <a href="/admin/articles/" class="btn btn-primary mt-3">Cancelar</a>
