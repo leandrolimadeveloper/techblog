@@ -6,7 +6,11 @@ const slugify = require('slugify')
 
 router.get('/admin/articles', (req, res) => {
     Article.findAll({
-        include: [{model: Category}]
+        include: [{model: Category}],
+        order: [
+            ['id', 'ASC']
+        ],
+        
     }).then(articles => {
         res.render('admin/articles/index', {articles: articles})
     })
@@ -112,6 +116,7 @@ router.get('/articles/page/:num', (req, res) => {
         }
 
         let result = {
+            page: parseInt(page),
             next: next,
             articles: articles
         }

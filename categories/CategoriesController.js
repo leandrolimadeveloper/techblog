@@ -3,10 +3,6 @@ const router = express.Router()
 const Category = require('./Category')
 const slugify = require('slugify')
 
-router.get('/categories', (req, res) => {
-    res.send('Rota de Categorias')
-})
-
 router.get('/admin/categories/new', (req, res) => {
     res.render('admin/categories/new')
 })

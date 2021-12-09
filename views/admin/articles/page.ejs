@@ -15,6 +15,17 @@
             </div>
             <br>
         <% }) %>
+        
+        <% if(result.page > 2) { %>
+            <a class="btn btn-info float-left mb-3" href="/articles/page/<%= result.page - 1 %>">Voltar</a>
+        <% } else if(result.page == 2) { %>
+            <a class="btn btn-info float-left mb-3" href="/">Voltar</a>
+        <% } %>
+
+        <% if(result.next) { %>
+            <a class="btn btn-info float-right mb-3" href="/articles/page/<%= result.page + 1 %>">Próxima</a>
+        <% } %>
+        
     </div>
 </body>
 
