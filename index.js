@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const connection = require('./database/database')
+const session = require('express-session')
 
 const categoriesController = require('./categories/CategoriesController')
 const articleController = require('./articles/ArticlesController')
@@ -12,6 +13,12 @@ const User = require('./users/User')
 
 // View Engine
 app.set('view engine', 'ejs')
+
+// Sessions
+app.use(session({
+    secret: 'jjkljsai29aksm12m921mklkannj201..', 
+    cookie: {maxAge: 30000}
+}))  
 
 // Static
 app.use(express.static('public'))
@@ -32,6 +39,26 @@ connection
 app.use('/', categoriesController)
 app.use('/', articleController)
 app.use('/', usersController)
+
+app.get('/session', (req, res) => {
+    req.session.curso = 'Formação Node.js'
+    req.session.ano = 2021
+    req.session.email = 'leandro.lima'
+    req.session.user = {
+        username: 'leandrolima',
+        id: 14
+    }
+    res.send('Sessão gerada')
+})
+
+app.get('/leitura-session', (req, res) => {
+    res.json({
+        curso: req.session.curso,
+        ano: req.session.ano,
+        email: req.session.email,
+        user: req.session.user
+    })
+})
 
 app.get('/', (req, res) => {
     Article.findAll({
