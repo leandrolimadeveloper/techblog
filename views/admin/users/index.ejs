@@ -11,6 +11,7 @@
             <tr>
                 <th>ID</th>
                 <th>Título</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,13 @@
                 <tr>
                     <th><%= user.id %></th>
                     <th><%= user.email %></th>
+                    <th>
+                        <a href="/admin/users/edit/<%= user.id %>" class="btn btn-warning">Editar</a>
+                        <form action="/admin/users/delete" method="POST" style="display: inline;" onsubmit="confirmDelete(event, this)">
+                            <input type="hidden" name="id" value="<%= user.id %>">
+                            <button class="btn btn-danger">Remover</button>
+                        </form>
+                    </th>
                 </tr>
             <% }) %>
         </tbody>
@@ -25,3 +33,13 @@
 </div>
 
 <%- include ('../../partials/footer.ejs') %>
+
+<script>
+    function confirmDelete(event, form) {
+        event.preventDefault()
+        const decision = confirm('Deseja remover esta categoria?')
+        if(decision) {
+            form.submit()
+        }
+    }
+</script>

@@ -5,7 +5,7 @@ const Article = require('./Article')
 const slugify = require('slugify')
 const adminAuth = require('../Middlewares/adminAuth')
 
-router.get('/admin/articles', adminAuth, (req, res) => {
+router.get('/admin/articles', (req, res) => {
     Article.findAll({
         include: [{model: Category}],
         order: [
@@ -17,7 +17,7 @@ router.get('/admin/articles', adminAuth, (req, res) => {
     })
 })
 
-router.get('/admin/articles/new', adminAuth, (req, res) => {
+router.get('/admin/articles/new', (req, res) => {
     Category.findAll().then(categories => {
         res.render('admin/articles/new', {categories: categories})
     })
@@ -58,7 +58,7 @@ router.post('/articles/delete', (req, res) => {
     }
 })
 
-router.get('/admin/articles/edit/:id', adminAuth, (req, res) => {
+router.get('/admin/articles/edit/:id', (req, res) => {
     let id = req.params.id
     let body = req.body.body
         

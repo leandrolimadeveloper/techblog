@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 nav {
-    background-color: rgb(32, 32, 32)
+    background-color: rgb(32, 32, 32);
+    font-family: 'Share Tech Mono', monospace;
 }
 
-.navbar-brand p {
+.navbar-brand {
     color: white;
     margin-bottom: 0;
     text-transform: uppercase;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Arial', Courier, monospace;
+    font-family: 'Share Tech Mono', monospace;
 }
