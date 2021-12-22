@@ -7,11 +7,7 @@ const adminAuth = require('../Middlewares/adminAuth')
 
 router.get('/admin/articles', (req, res) => {
     Article.findAll({
-        include: [{model: Category}],
-        order: [
-            ['id', 'ASC']
-        ],
-        
+        include: [{model: Category}]
     }).then(articles => {
         res.render('admin/articles/index', {articles: articles})
     })

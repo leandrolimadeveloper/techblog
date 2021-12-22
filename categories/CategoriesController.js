@@ -4,6 +4,10 @@ const Category = require('./Category')
 const slugify = require('slugify')
 const adminAuth = require('../Middlewares/adminAuth')
 
+router.get('/admin', (req, res) => {
+    res.render('admin/index')
+})
+
 router.get('/admin/categories/new', (req, res) => {
     res.render('admin/categories/new')
 })

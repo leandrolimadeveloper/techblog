@@ -1,0 +1,35 @@
+<%- include ('../partials/header.ejs') %>
+<%- include ('../partials/navbar.ejs') %>
+
+<div class="container">
+    <h1 class="text-center mt-3">Painel Administrativo</h2>
+    <div class="row mt-3">
+        <div class="col-sm">
+            <a href="/admin/categories" class="col-sm btn btn-warning text-white p-5">Categorias</a>
+        </div>
+        
+        <div class="col-sm">
+            <a href="/admin/articles" class="col-sm btn btn-primary text-white p-5">Artigos</a>
+        </div>
+
+        <div class="col-sm">
+            <a href="/admin/users" class="col-sm btn btn-success text-white p-5">Usuários</a>
+        </div>
+      </div>
+
+        <div class="row mt-3">
+            <div class="col-sm">
+                <a href="/admin/categories/new" class="col-sm btn btn-warning text-white p-5">Criar Categoria</a>
+            </div>
+            
+            <div class="col-sm">
+                <a href="/admin/articles/new" class="col-sm btn btn-primary text-white p-5">Criar Artigo</a>
+            </div>
+
+            <div class="col-sm">
+                <a href="/admin/users/create" class="col-sm btn btn-success text-white p-5">Criar Usuário</a>
+            </div>
+      </div>
+</div>
+
+<%- include ('../partials/footer.ejs') %>
