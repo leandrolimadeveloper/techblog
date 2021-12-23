@@ -6,6 +6,13 @@ const slugify = require('slugify')
 const adminAuth = require('../Middlewares/adminAuth')
 
 router.get('/admin/articles', (req, res) => {
+    
+    let num = 2
+    if (num == 2) {
+        console.log('teste')
+    }
+
+
     Article.findAll({
         include: [{model: Category}]
     }).then(articles => {
@@ -98,7 +105,7 @@ router.get('/articles/page/:num', (req, res) => {
     if(isNaN(page) || page == 1) {
         offset = 0
     } else {
-        offset = parseInt(page) * limit
+        offset = (parseInt(page) - 1) * limit
     }
 
     Article.findAndCountAll({
@@ -106,6 +113,7 @@ router.get('/articles/page/:num', (req, res) => {
         offset: offset
     }).then(articles => {
         let next 
+        
         if(offset + limit >= articles.count) {
             next = false
         } else {

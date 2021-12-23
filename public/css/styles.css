@@ -12,6 +12,9 @@ nav {
 }
 
 body {
-    font-family: 'Arial', Courier, monospace;
     font-family: 'Share Tech Mono', monospace;
+}
+
+.p-article {
+    font-family: Arial;
 }
