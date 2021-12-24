@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs')
 const adminAuth = require('../Middlewares/adminAuth')
 const Category = require('../categories/Category')
 
-router.get('/admin/users', (req, res) => {
+router.get('/admin/users', adminAuth, (req, res) => {
     User.findAll().then(users => {
         res.render('admin/users/index', {users: users})
     })
@@ -31,7 +31,7 @@ router.post('/admin/users/delete', (req, res) => {
     }
 })
 
-router.get('/admin/users/edit/:id', (req, res) => {
+router.get('/admin/users/edit/:id', adminAuth, (req, res) => {
     let id = req.params.id
 
     if(isNaN(id)) {
