@@ -37,6 +37,7 @@
     <li><a href="https://ejs.co/" alt="EJS">EJS</a></li>
     <li><a href="https://nodejs.org/" alt="Node.js">Node.js</a></li>
     <li><a href="https://www.mysql.com" alt="MySQL">MySQL</a></li>
+    <li><a href="https://sequelize.org/" alt="Sequelize">Sequelize</a></li>
 </ul>
 
 <hr>
@@ -65,7 +66,7 @@ $ npm i
 Open the file 'database.js', stored in database folder, and set in the line 2, after 'root', your MySQL server password.
 
 ```bash
-const connection = new Sequelize('techblog', 'root', 'BDh04.!x815|', {
+const connection = new Sequelize('techblog', 'root', '', {
 ```
 
 ### Creating database 
