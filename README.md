@@ -66,7 +66,7 @@ $ npm i
 Open the file 'database.js', stored in database folder, and set in the line 2, after 'root', your MySQL server password.
 
 ```bash
-const connection = new Sequelize('techblog', 'root', '', {
+const connection = new Sequelize('techblog', 'root', '', { ...
 ```
 
 ### Creating database 
