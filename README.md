@@ -2,7 +2,7 @@
     <img alt="TechBlog" width="200px" height="200px" src="https://user-images.githubusercontent.com/76854209/147364208-ce183385-0356-4b44-a81a-ddd739b1e949.png" />
     <br>
     TechBlog
-    <p align="center" style="color: #5271FF;">Your Tech Blog</p>
+    <p align="center">Your Tech Blog</p>
 
 </h1>
 
